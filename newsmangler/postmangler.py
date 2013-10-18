@@ -284,7 +284,7 @@ class PostMangler:
                 art.headers['From'] = self.conf['posting']['from']
                 art.headers['Newsgroups'] = self.newsgroup
                 art.headers['Subject'] = subject % (partnum)
-                art.headers['Message-ID'] = '<%.5f.%d@%s>' % (time.time(), partnum, self.conf['server']['hostname'])
+                art.headers['Message-ID'] = '<%.5f.%d@%s>' % (time.time(), partnum, self.conf['server']['virtualhost'])
                 art.headers['X-Newsposter'] = 'newsmangler %s (%s) - https://github.com/madcowfred/newsmangler\r\n' % (
                     NM_VERSION, yenc.yEncMode())
 
@@ -314,7 +314,7 @@ class PostMangler:
         art.headers['From'] = self.conf['posting']['from']
         art.headers['Newsgroups'] = self.newsgroup
         art.headers['Subject'] = subject % (partnum)
-        art.headers['Message-ID'] = '<%.5f.%d@%s>' % (time.time(), partnum, self.conf['server']['hostname'])
+        art.headers['Message-ID'] = '<%.5f.%d@%s>' % (time.time(), partnum, self.conf['server']['virtualhost'])
         art.headers['X-Newsposter'] = 'newsmangler %s (%s) - https://github.com/madcowfred/newsmangler\r\n' % (
             NM_VERSION, yenc.yEncMode())
 
